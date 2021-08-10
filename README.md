@@ -1,7 +1,7 @@
 # Simple Note Taker
   
   ## Description
-  This app uses `Express.js` to create notes that will persist through multiple sessions, making a simple but effective not taker.
+  This app uses `Express.js` to create notes that will persist through multiple sessions, making a simple but effective note taker.
 
   
 
