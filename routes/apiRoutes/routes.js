@@ -4,15 +4,15 @@ const { v4: uuidv4 } = require(`uuid`);
 const router = require(`express`).Router();
 
 const {
-    createNewNote,
+    createNewNote, removeNote,
 } = require(`../../lib/notes`);
-const notes = require(`../../db/db.json`);
+const { notes } = require(`../../db/db.json`);
 
 router.get(`/notes`, (req, res) => {
     let results = notes;
     // maybe need query handling here?
     res.json(notes);
-    console.log(notes);
+    // console.log(notes);
 });
 
 router.post(`/notes`, (req, res) => {
@@ -21,5 +21,11 @@ router.post(`/notes`, (req, res) => {
     const note = createNewNote(req.body, notes);
     res.json(note);
 });
+
+// router.delete(`/notes/:id`, (req, res) => {
+//     const { id } = req.params;
+//     const newNotes = removeNote(id, notes);
+//     res.json(newNotes)
+// })
 
 module.exports = router;
